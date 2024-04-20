@@ -111,10 +111,10 @@ export class FlightSearchComponent {
       flightDate.setTime(flightDate.getTime() + this.TEN_MINUTES);
 
       // Mutable
-      this.oldSchoolFlights[0].date = flightDate.toISOString();
+      // this.oldSchoolFlights[0].date = flightDate.toISOString();
 
       // Immutable
-      // ?
+      this.oldSchoolFlights[0] = { ...this.oldSchoolFlights[0], date: flightDate.toISOString() };
     }
 
     // RxJS
