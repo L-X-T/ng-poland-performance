@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 
 import { ChartComponent } from './chart/chart.component';
 
@@ -8,10 +8,10 @@ import { ChartComponent } from './chart/chart.component';
   templateUrl: './charts.component.html',
   styleUrl: './charts.component.scss',
 })
-export class ChartsComponent {
+export class ChartsComponent implements DoCheck {
   protected readonly title = 'Charts';
   protected charts: { id: number; data: string }[] = [];
-  private readonly chartsCount = 4;
+  private readonly chartsCount = 108;
 
   constructor() {
     for (let index = 1; index <= this.chartsCount; index++) {
@@ -22,5 +22,9 @@ export class ChartsComponent {
 
       this.charts.push({ id: index, data: 'data' + dataNumber });
     }
+  }
+
+  ngDoCheck(): void {
+    console.log('hello');
   }
 }
