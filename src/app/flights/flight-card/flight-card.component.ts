@@ -1,4 +1,15 @@
-import { Component, DoCheck, ElementRef, inject, input, isDevMode, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DoCheck,
+  ElementRef,
+  inject,
+  input,
+  isDevMode,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 
 import moment from 'moment';
 
@@ -11,7 +22,7 @@ import { BlinkService } from '../../shared/blink.service';
   imports: [CityPipe],
   templateUrl: './flight-card.component.html',
   styleUrl: './flight-card.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightCardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   private readonly debug = isDevMode();

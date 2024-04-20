@@ -1,4 +1,13 @@
-import { Component, computed, DestroyRef, effect, ElementRef, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  DestroyRef,
+  effect,
+  ElementRef,
+  inject,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -26,7 +35,7 @@ import { FlightValidationErrorsComponent } from '../flight-validation-errors/fli
   ],
   templateUrl: './flight-search.component.html',
   styleUrl: './flight-search.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightSearchComponent {
   protected from = 'Graz';
