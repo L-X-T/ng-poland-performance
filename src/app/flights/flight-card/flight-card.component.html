@@ -10,7 +10,8 @@
         <span> (delayed)</span>
       }
     </p>
-    <p [class.delayed]="item().delayed">Date: {{ getDate(item()) }}</p>
+    <p [class.delayed]="item().delayed">Date: {{ item() | flightDate: datePipe | date: 'dd.MM.yyyy HH:mm' }}</p>
+    <!--<p [class.delayed]="item().delayed">Date: {{ item().date | date: 'dd.MM.yyyy HH:mm' }}</p>-->
     <p>
       <ng-content>No content</ng-content>
     </p>
