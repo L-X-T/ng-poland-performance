@@ -60,7 +60,7 @@ export class FlightEditComponent {
   });
 
   private readonly DEBOUNCE_MS = 250;
-  private readonly DELAY_MS = 3_000;
+  private readonly DELAY_MS = 2_500;
 
   private readonly flightInputEffect = effect(() => this.patchFormValue(this.flight() as Flight));
   private readonly flightParamEffect = effect(() => {
@@ -91,7 +91,7 @@ export class FlightEditComponent {
 
     this.flightService
       .save(flightToSave)
-      .pipe(delay(this.DELAY_MS))
+      .pipe(delay(this.DELAY_MS), takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (flight) => {
           // console.warn('FlightEditComponent - onSave()');
