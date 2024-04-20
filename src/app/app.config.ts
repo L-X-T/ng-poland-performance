@@ -1,7 +1,9 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
 import { IMAGE_LOADER, ImageLoaderConfig } from '@angular/common';
-import { PreloadAllModules, provideRouter, withComponentInputBinding, withPreloading } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withPreloading } from '@angular/router';
+
+import { quicklinkProviders, QuicklinkStrategy } from 'ngx-quicklink';
 
 import { appRoutes } from './app.routes';
 
@@ -21,7 +23,9 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
       // withDebugTracing(),
       // withEnabledBlockingInitialNavigation()
-      withPreloading(PreloadAllModules),
+      // withPreloading(PreloadAllModules),
+      withPreloading(QuicklinkStrategy),
     ),
+    quicklinkProviders,
   ],
 };
