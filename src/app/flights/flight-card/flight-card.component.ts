@@ -22,7 +22,7 @@ import { BlinkService } from '../../shared/blink.service';
   imports: [CityPipe],
   templateUrl: './flight-card.component.html',
   styleUrl: './flight-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightCardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   private readonly debug = isDevMode();
@@ -66,6 +66,7 @@ export class FlightCardComponent implements OnChanges, OnInit, DoCheck, OnDestro
   }
 
   protected getDate(item: Flight): string {
+    console.log('FlightCard - getDate() was called');
     return moment(item.date).format('MM.DD.YYYY HH:mm');
   }
 
