@@ -1,6 +1,6 @@
-import { Component, DestroyRef, effect, inject, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject, input, model } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Observable } from 'rxjs';
@@ -15,18 +15,20 @@ import { Flight } from '../../entities/flight';
   selector: 'app-flight-edit',
   imports: [ReactiveFormsModule],
   templateUrl: './flight-edit.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightEditComponent {
   private readonly destroyRef = inject(DestroyRef);
   private readonly fb = inject(FormBuilder);
   private readonly flightService = inject(FlightService);
+  private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
   protected flight$?: Observable<Flight>;
   readonly flight = model<Flight>();
 
-  readonly id = input<number>();
-  readonly showDetails = input(false);
+  protected readonly id = input<number>(0);
+  protected readonly showDetails = input<boolean>(false);
 
   protected message = '';
   protected pattern = pattern;

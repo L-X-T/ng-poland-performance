@@ -11,7 +11,7 @@ export class FlightService {
   static USE_HTTPS = true;
 
   // intentional circular dependency
-  readonly url = apiUrl + (FlightService.USE_HTTPS ? 'Flight' : 'flight');
+  readonly url = apiUrl + 'flight';
 
   private readonly http = inject(HttpClient);
 

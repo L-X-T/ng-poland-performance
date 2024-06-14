@@ -30,7 +30,7 @@ export class FlightCardComponent implements OnChanges, OnInit, DoCheck, OnDestro
   readonly item = input.required<Flight>();
   readonly selected = input(false);
 
-  readonly datePipe = new DatePipe('en-US');
+  protected readonly datePipe = new DatePipe('en-US');
 
   private readonly blinkService = inject(BlinkService);
   private readonly elementRef = inject(ElementRef);
