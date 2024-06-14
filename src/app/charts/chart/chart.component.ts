@@ -47,12 +47,12 @@ export class ChartComponent {
     const myEffect = effect(
       () => {
         const container = this.container();
-        this.ngZone.runOutsideAngular(() => {
-          if (this.chart && container) {
-            this.chart.container(container.nativeElement);
-            this.chart.draw();
-          }
-        });
+        // this.ngZone.runOutsideAngular(() => {
+        if (this.chart && container) {
+          this.chart.container(container.nativeElement);
+          this.chart.draw();
+        }
+        // });
         myEffect.destroy();
       },
       { manualCleanup: true },

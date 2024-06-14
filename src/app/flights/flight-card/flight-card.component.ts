@@ -1,4 +1,14 @@
-import { Component,DoCheck, ElementRef, inject, input, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DoCheck,
+  ElementRef,
+  inject,
+  input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 
 import { DatePipe } from '@angular/common';
 
@@ -12,7 +22,7 @@ import { FlightDatePipe } from '../shared/pipes/flight-date.pipe';
   imports: [DatePipe, CityPipe, FlightDatePipe],
   templateUrl: './flight-card.component.html',
   styleUrl: './flight-card.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightCardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   private readonly debug = false;
