@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 
 // import flightRoutes from './flights/flights.routes';
 
@@ -13,7 +13,7 @@ export const appRoutes: Route[] = [
 
   {
     path: 'home',
-    component: HomeComponent,
+    loadComponent: () => import('./home/home.component'),
     title: 'Home',
   },
 
@@ -26,7 +26,7 @@ export const appRoutes: Route[] = [
   {
     path: 'charts',
     // component: ChartsComponent,
-    loadComponent: () => import('./charts/charts.component').then((c) => c.ChartsComponent),
+    loadComponent: () => import('./charts/charts.component'),
   },
 
   /*{

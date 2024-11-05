@@ -8,3 +8,5 @@ import { NgOptimizedImage } from '@angular/common';
   imports: [NgOptimizedImage],
 })
 export class HomeComponent {}
+
+export default HomeComponent;

@@ -149,3 +149,5 @@ export class FlightSearchComponent {
     this.blinkService.blinkElementsFirstChild(this.elementRef);
   }
 }
+
+export default FlightSearchComponent;
