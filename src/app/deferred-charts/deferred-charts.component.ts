@@ -26,3 +26,5 @@ export class DeferredChartsComponent {
     }
   }
 }
+
+export default DeferredChartsComponent;

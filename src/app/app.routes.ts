@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
 
 // import { HomeComponent } from './home/home.component';
-import { DynamicChartComponent } from './dynamic-chart/dynamic-chart.component';
-import { DeferredChartsComponent } from './deferred-charts/deferred-charts.component';
-
 // import flightRoutes from './flights/flights.routes';
+// import { ChartsComponent } from './charts/charts.component';
+// import { DynamicChartComponent } from './dynamic-chart/dynamic-chart.component';
+// import { DeferredChartsComponent } from './deferred-charts/deferred-charts.component';
 
 export const appRoutes: Route[] = [
   {
@@ -33,12 +33,12 @@ export const appRoutes: Route[] = [
 
   {
     path: 'dynamic-chart',
-    component: DynamicChartComponent, // omit lazy loading to demonstrate dynamic loading
+    loadComponent: () => import('./dynamic-chart/dynamic-chart.component'),
   },
 
   {
     path: 'deferred-charts',
-    component: DeferredChartsComponent, // omit lazy loading to demonstrate dynamic loading
+    loadComponent: () => import('./deferred-charts/deferred-charts.component'),
   },
 
   /*{
