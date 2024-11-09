@@ -1,5 +1,5 @@
 <div class="header">
-  <h1>Flight Search</h1>
+  <h1>Incremental Hydration Demo</h1>
 </div>
 
 <form #flightSearchForm="ngForm">
@@ -48,19 +48,27 @@
 </form>
 
 <div class="container">
-  <h3 class="title">Old School Flights</h3>
+  <h3 class="title">hydrate on hover</h3>
   <div class="row">
     @for (flight of oldSchoolFlights; track flight.id) {
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <app-flight-card [item]="flight" [selected]="basket[flight.id]">
-          <button type="button" class="btn btn-default btn-spacing" (click)="basket[flight.id] = !basket[flight.id]">
-            {{ basket[flight.id] ? 'Rem.' : 'Add' }}
-          </button>
+        @defer (on viewport; hydrate on hover) {
+          <app-flight-card [item]="flight" [selected]="basket[flight.id]">
+            <button type="button" class="btn btn-default btn-spacing" (click)="basket[flight.id] = !basket[flight.id]">
+              {{ basket[flight.id] ? 'Rem.' : 'Add' }}
+            </button>
 
-          <button type="button" class="btn btn-default btn-spacing" (click)="onEditFlight(flight.id)">Edit</button>
+            <button type="button" class="btn btn-default btn-spacing" (click)="onEditFlight(flight.id)">Edit</button>
 
-          <app-flight-status-toggle [(status)]="flight.delayed" />
-        </app-flight-card>
+            <app-flight-status-toggle [(status)]="flight.delayed" />
+          </app-flight-card>
+        } @loading {
+          <div class="placeholder">Flight is loading.</div>
+        } @placeholder {
+          <div class="placeholder">Flight will load immediately.</div>
+        } @error {
+          <div class="placeholder">Flight loading error.</div>
+        }
       </div>
     } @empty {
       No flights found.
@@ -69,19 +77,27 @@
 </div>
 
 <div class="container">
-  <h3 class="title">Flights with Async Pipe</h3>
+  <h3 class="title">hydrate on interaction</h3>
   <div class="row">
     @for (flight of flightsSubject | async; track flight.id) {
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <app-flight-card [item]="flight" [selected]="basket[flight.id]">
-          <button type="button" class="btn btn-default btn-spacing" (click)="basket[flight.id] = !basket[flight.id]">
-            {{ basket[flight.id] ? 'Rem.' : 'Add' }}
-          </button>
+        @defer (on viewport; hydrate on interaction) {
+          <app-flight-card [item]="flight" [selected]="basket[flight.id]">
+            <button type="button" class="btn btn-default btn-spacing" (click)="basket[flight.id] = !basket[flight.id]">
+              {{ basket[flight.id] ? 'Rem.' : 'Add' }}
+            </button>
 
-          <button type="button" class="btn btn-default btn-spacing" (click)="onEditFlight(flight.id)">Edit</button>
+            <button type="button" class="btn btn-default btn-spacing" (click)="onEditFlight(flight.id)">Edit</button>
 
-          <app-flight-status-toggle [(status)]="flight.delayed" />
-        </app-flight-card>
+            <app-flight-status-toggle [(status)]="flight.delayed" />
+          </app-flight-card>
+        } @loading {
+          <div class="placeholder">Flight is loading.</div>
+        } @placeholder {
+          <div class="placeholder">Flight will load immediately.</div>
+        } @error {
+          <div class="placeholder">Flight loading error.</div>
+        }
       </div>
     } @empty {
       No async flights found.
@@ -90,19 +106,27 @@
 </div>
 
 <div class="container">
-  <h3 class="title">Flights with Signal</h3>
+  <h3 class="title">hydrate never</h3>
   <div class="row">
     @for (flight of flights(); track flight.id) {
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <app-flight-card [item]="flight" [selected]="basket[flight.id]">
-          <button type="button" class="btn btn-default btn-spacing" (click)="basket[flight.id] = !basket[flight.id]">
-            {{ basket[flight.id] ? 'Rem.' : 'Add' }}
-          </button>
+        @defer (on viewport; hydrate never) {
+          <app-flight-card [item]="flight" [selected]="basket[flight.id]">
+            <button type="button" class="btn btn-default btn-spacing" (click)="basket[flight.id] = !basket[flight.id]">
+              {{ basket[flight.id] ? 'Rem.' : 'Add' }}
+            </button>
 
-          <button type="button" class="btn btn-default btn-spacing" (click)="onEditFlight(flight.id)">Edit</button>
+            <button type="button" class="btn btn-default btn-spacing" (click)="onEditFlight(flight.id)">Edit</button>
 
-          <app-flight-status-toggle [(status)]="flight.delayed" />
-        </app-flight-card>
+            <app-flight-status-toggle [(status)]="flight.delayed" />
+          </app-flight-card>
+        } @loading {
+          <div class="placeholder">Flight is loading.</div>
+        } @placeholder {
+          <div class="placeholder">Flight will load immediately.</div>
+        } @error {
+          <div class="placeholder">Flight loading error.</div>
+        }
       </div>
     } @empty {
       No signal flights found.

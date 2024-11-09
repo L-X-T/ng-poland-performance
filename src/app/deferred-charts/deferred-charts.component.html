@@ -8,7 +8,7 @@
       <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="chart{{ i + 1 }}">
         @switch (chart.id % 4) {
           @case (1) {
-            @defer (on immediate) {
+            @defer (on immediate; hydrate on hover) {
               <app-chart [id]="chart.id" [data]="chart.data" />
             } @loading {
               <div class="placeholder">Chart is loading.</div>
@@ -19,7 +19,7 @@
             }
           }
           @case (2) {
-            @defer (on viewport) {
+            @defer (on viewport; hydrate on hover) {
               <app-chart [id]="chart.id" [data]="chart.data" />
             } @loading {
               <div class="placeholder">Chart is loading.</div>
@@ -30,7 +30,7 @@
             }
           }
           @case (3) {
-            @defer (on timer(4200ms)) {
+            @defer (on timer(4200ms); hydrate never) {
               <app-chart [id]="chart.id" [data]="chart.data" />
             } @loading {
               <div class="placeholder">Chart is loading.</div>
@@ -41,7 +41,7 @@
             }
           }
           @case (0) {
-            @defer (on hover) {
+            @defer (on hover; hydrate on interaction) {
               <app-chart [id]="chart.id" [data]="chart.data" />
             } @loading {
               <div class="placeholder">Chart is loading.</div>
@@ -52,7 +52,7 @@
             }
           }
           @default {
-            @defer (on hover) {
+            @defer (on hover; hydrate on interaction) {
               <app-chart [id]="chart.id" [data]="chart.data" />
             } @loading {
               <div class="placeholder">Chart is loading.</div>
