@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-// import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component';
 // import flightRoutes from './flights/flights.routes';
 // import { ChartsComponent } from './charts/charts.component';
 // import { DynamicChartComponent } from './dynamic-chart/dynamic-chart.component';
@@ -15,7 +15,7 @@ export const appRoutes: Route[] = [
 
   {
     path: 'home',
-    loadComponent: () => import('./home/home.component'),
+    component: HomeComponent,
     title: 'Home',
   },
 
