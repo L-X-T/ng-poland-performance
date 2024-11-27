@@ -1,4 +1,9 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
+import { inject } from '@angular/core';
+
+import { lastValueFrom, map } from 'rxjs';
+
+import { FlightService } from './flights/flight.service';
 
 export const serverRoutes: ServerRoute[] = [
   {
@@ -13,13 +18,16 @@ export const serverRoutes: ServerRoute[] = [
 
   {
     path: 'flights/flight-edit/:id',
-    renderMode: RenderMode.Client, // :id needs getPrerenderParams for prerender
-    /*async getPrerenderParams(): Promise<{ id: string }[]> {
+    renderMode: RenderMode.Prerender, // use getPrerenderParams for prerender
+    async getPrerenderParams(): Promise<{ id: string }[]> {
       // API call to get the user IDs
-      const flightIds = await inject(FlightService).getFlightIds();
-      // build an array like [{ id: '1' }, { id: '2' }, { id: '3' }]
-      return flightIds.map((id) => ({ id: '' + id }));
-    },*/
+      return await lastValueFrom(
+        inject(FlightService)
+          .getAllIds()
+          // build an array like [{ id: '1' }, { id: '2' }, { id: '3' }]
+          .pipe(map((ids) => ids.map((id) => ({ id: '' + id })))),
+      );
+    },
   },
 
   {

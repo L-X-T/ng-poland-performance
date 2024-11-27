@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 import { Flight } from '../entities/flight';
 import { apiUrl } from '../shared/global';
@@ -27,6 +27,12 @@ export class FlightService {
     const params = new HttpParams().set('id', id);
 
     return this.http.get<Flight>(this.url, { params, headers });
+  }
+
+  getAllIds(): Observable<number[]> {
+    const headers = new HttpHeaders().set('Accept', 'application/json');
+
+    return this.http.get<Flight[]>(this.url, { headers }).pipe(map((flights) => flights.map((f) => f.id)));
   }
 
   save(flight: Flight): Observable<Flight> {
