@@ -1,4 +1,4 @@
-import { Component, inject, DOCUMENT } from '@angular/core';
+import { Component, DOCUMENT, inject } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',

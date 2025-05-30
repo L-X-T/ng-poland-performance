@@ -29,7 +29,7 @@ export class ChartComponent {
     effect(() => {
       this.chart = anychart.pie(this.chartsDataService.getData(this.data()));
       const container = this.container();
-    if (this.chart && container) {
+      if (this.chart && container) {
         this.chart.container(container.nativeElement);
         this.chart.draw();
       }

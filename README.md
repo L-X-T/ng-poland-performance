@@ -1,6 +1,6 @@
 # L-X-T - Best Practices Repository
 
-This _Angular_ project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2 and has since been improved and update by [@LX_T](https://twitter.com/LX_T), currently using Angular v19.
+This _Angular_ project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2 and has since been improved and updated by [@LX_T](https://twitter.com/LX_T), currently using Angular v20.
 
 ## Style Guide
 

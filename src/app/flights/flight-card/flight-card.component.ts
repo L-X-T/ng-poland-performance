@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnChanges, OnDestroy, OnInit, input } from '@angular/core';
+import { Component, ElementRef, inject, input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 import moment from 'moment';
 
