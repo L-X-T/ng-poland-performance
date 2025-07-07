@@ -154,6 +154,12 @@ In this part, you will take a closer look at the starter kit to familiarize your
    yarn
    ```
 
+   or even better!
+
+   ```shell
+   pnpm i
+   ```
+
 2. If you have not already done so, start the development web server:
 
    ```shell
@@ -164,6 +170,12 @@ In this part, you will take a closer look at the starter kit to familiarize your
 
    ```shell
    yarn start
+   ```
+
+   or even shorter!
+
+   ```shell
+   ng s
    ```
 
 3. Open the demo in your browser (preferably a Chromium): http://localhost:4200.

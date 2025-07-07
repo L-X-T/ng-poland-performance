@@ -1,4 +1,4 @@
-# L-X-T - Best Practices Repository
+# L-X-T - Performance Optimizations with Angular
 
 This _Angular_ project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2 and has since been improved and updated by [@LX_T](https://twitter.com/LX_T), currently using Angular v20.
 
@@ -8,13 +8,13 @@ Make sure to check out the [Angular Coding Style Guide](style-guide/style-guide.
 
 ## Slides
 
-You'll find the slides in the [slides](https://github.com/L-X-T/ng-b357/tree/main/slides) directory.
+You'll find the slides in the [slides](https://github.com/L-X-T/ng-poland-performance/tree/main/slides) directory.
 
 ## Exercises
 
-You'll find the workshop labs in the [labs](https://github.com/L-X-T/ng-b357/tree/main/labs) directory.
+You'll find the workshop labs in the [labs](https://github.com/L-X-T/ng-poland-performance/tree/main/labs) directory.
 
-Take a look at the [00_getting-started.md](https://github.com/L-X-T/ng-b357/blob/main/labs/00_getting-started.md) lab.
+Take a look at the [00_getting-started.md](https://github.com/L-X-T/ng-poland-performance/blob/main/labs/00_getting-started.md) lab.
 
 Hint: open the lab in your IDE's preview mode or in your browser (via GitHub)!
 
@@ -32,4 +32,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help`, contact your trainer [Alex T.](https://alex.thalhammer.name) or go check our website [Angular Architects](https://www.angulararchitects.io).
+To get more help on the Angular CLI use `ng help`, contact your trainer [Alex T.](https://alex.thalhammer.name) or go check our website [Angular Architects](https://www.angulararchitects.io/en/trainer/alexander-thalhammer/).
