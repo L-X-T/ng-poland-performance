@@ -189,3 +189,5 @@ Add additional `@defer (hydrate on ...)` examples and be ready to present them.
 Check out the ways to use `hydrate on` in the [official docs](https://angular.dev/guide/incremental-hydration).
 
 What's your favorite trigger for hydration? Is it different to `@defer`? Prepare to report to the group.
+
+Also, make sure to read my [Guide for Server-Side Rendering](https://www.angulararchitects.io/en/blog/guide-for-ssr/)!
