@@ -23,7 +23,8 @@
     "igv": "npx @rx-angular/import-graph-visualizer --entry-points src/main.ts --ts-config tsconfig.app.json",
     "dpdm": "npx dpdm --no-warning --no-tree src/main.ts",
     "ng:update": "ng update @angular/cli @angular/core @angular/material angular-eslint",
-    "e2e": "ng e2e --ui"
+    "e2e": "ng e2e --ui",
+    "serve:ssr:ng-b357": "node dist/ng-b357/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -58,9 +59,9 @@
     "@axe-core/playwright": "^4.11.0",
     "@eslint/js": "^9.39.1",
     "@playwright/test": "1.56.1",
-    "@types/express": "^5.0.5",
+    "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.12",
-    "@types/node": "^24.10.0",
+    "@types/node": "^20.17.19",
     "angular-eslint": "^20.6.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
