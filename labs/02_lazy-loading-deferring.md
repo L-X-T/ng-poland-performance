@@ -382,6 +382,12 @@ In this exercise you will implement Preloading using Angular's `PreloadAllModule
 
 6. Test to see if your component is working as expected.
 
+   Please note: When testing `@defer` with `ng serve` you should disable hot module reloading:
+
+   ```
+   ng s --no-hmr
+   ```
+
 ### Check the docs and find your favorite trigger
 
 Check out the ways to use `@defer` in the [official docs](https://angular.dev/guide/templates/defer).
